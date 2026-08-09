@@ -4,60 +4,57 @@ export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-navy-dark text-white w-full border-t border-gold/20 mt-auto relative overflow-hidden">
-      {/* Subtle gold glow at the top */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/50 to-transparent"></div>
-      
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-        {/* Logo & Rights */}
-        <div className="flex flex-col gap-6 lg:col-span-1">
+    <footer className="bg-navy-dark text-white w-full border-t border-white/5 mt-auto relative overflow-hidden">
+      <div className="max-w-5xl mx-auto px-6 py-20 flex flex-col items-center text-center gap-12">
+        
+        {/* Logo */}
+        <div className="mb-4">
           <img 
             src="/Punta_Cana_Barbier_Logo.webp" 
             alt="Punta Cana Barbier" 
-            className="h-20 w-auto object-contain object-left drop-shadow-[0_0_15px_rgba(212,175,55,0.2)]" 
+            className="w-48 md:w-56 h-auto object-contain drop-shadow-2xl" 
           />
-          <p className="text-gray-400 font-light text-sm">
-            © {new Date().getFullYear()} {t('footer.rights')}
-          </p>
         </div>
 
-        {/* Quick Links */}
-        <div className="flex flex-col gap-4">
-          <h4 className="font-serif text-xl text-gold mb-2">Navigation</h4>
-          <ul className="flex flex-col gap-3 font-light text-gray-400">
-            <li><a href="/" className="hover:text-gold transition-colors">Home</a></li>
-            <li><a href="/services" className="hover:text-gold transition-colors">Services</a></li>
-            <li><a href="/about" className="hover:text-gold transition-colors">About Us</a></li>
-            <li><a href="/contact" className="hover:text-gold transition-colors">Contact</a></li>
-          </ul>
+        {/* Navigation Links */}
+        <ul className="flex flex-wrap justify-center gap-8 md:gap-12 font-serif text-lg text-gray-300">
+          <li><a href="/" className="hover:text-gold transition-colors premium-hover block">Home</a></li>
+          <li><a href="/services" className="hover:text-gold transition-colors premium-hover block">Services</a></li>
+          <li><a href="/about" className="hover:text-gold transition-colors premium-hover block">About Us</a></li>
+          <li><a href="/contact" className="hover:text-gold transition-colors premium-hover block">Contact</a></li>
+        </ul>
+
+        {/* Separator */}
+        <div className="w-16 h-[1px] bg-gold/50"></div>
+
+        {/* Contact & Hours Info */}
+        <div className="flex flex-col md:flex-row gap-12 md:gap-24 text-gray-400 font-light tracking-wide">
+          <div className="flex flex-col gap-2">
+            <span className="font-serif text-gold text-xl mb-1">Visit Us</span>
+            <p className="leading-relaxed">
+              255 Boul. de la Concorde O.<br/>
+              Laval, QC H7N 5T1
+            </p>
+            <a href="tel:+14388836129" className="text-white hover:text-gold transition-colors mt-2">
+              (438) 883-6129
+            </a>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <span className="font-serif text-gold text-xl mb-1">Hours</span>
+            <p className="leading-relaxed">
+              Mon - Sat: <span className="text-white">9AM - 8PM</span><br/>
+              Sunday: <span className="text-gold">Closed</span>
+            </p>
+          </div>
         </div>
-        
-        {/* Contact */}
-        <div className="flex flex-col gap-4">
-          <h4 className="font-serif text-xl text-gold mb-2">Contact</h4>
-          <p className="text-gray-400 font-light tracking-wide leading-relaxed">
-            255 Boul. de la Concorde O.<br/>
-            Laval, QC H7N 5T1
-          </p>
-          <a href="tel:+14388836129" className="text-white hover:text-gold transition-colors text-lg mt-2 font-medium">
-            (438) 883-6129
-          </a>
-        </div>
-        
-        {/* Hours */}
-        <div className="flex flex-col gap-4">
-          <h4 className="font-serif text-xl text-gold mb-2">Hours</h4>
-          <ul className="flex flex-col gap-3 text-gray-400 font-light tracking-wide">
-            <li className="flex justify-between border-b border-white/5 pb-2">
-              <span>Mon - Sat</span>
-              <span className="text-white">9AM - 8PM</span>
-            </li>
-            <li className="flex justify-between pt-2">
-              <span>Sunday</span>
-              <span className="text-gold">Closed</span>
-            </li>
-          </ul>
-        </div>
+      </div>
+
+      {/* Copyright Bar */}
+      <div className="w-full border-t border-white/5 bg-[#080808] py-6 text-center">
+        <p className="text-gray-500 font-light text-xs tracking-widest uppercase">
+          © {new Date().getFullYear()} Punta Cana Barbier. {t('footer.rights')}
+        </p>
       </div>
     </footer>
   );
