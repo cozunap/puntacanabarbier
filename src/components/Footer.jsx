@@ -15,8 +15,8 @@ export default function Footer() {
         
         <div className="flex flex-col gap-4">
           <h4 className="font-serif text-xl text-white">Contact</h4>
-          <p className="text-gray-400 font-light tracking-wide">123 Grooming Ave<br/>Punta Cana, DR</p>
-          <a href="tel:+18095551234" className="text-gold hover:text-gold-light transition-colors">(809) 555-1234</a>
+          <p className="text-gray-400 font-light tracking-wide">255 Boul. de la Concorde O.,<br/>Laval, QC H7N 5T1</p>
+          <a href="tel:+14388836129" className="text-gold hover:text-gold-light transition-colors">(438) 883-6129</a>
         </div>
         
         <div className="flex flex-col gap-4">
