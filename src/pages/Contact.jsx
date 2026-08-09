@@ -40,9 +40,9 @@ export default function Contact() {
             We are always here to answer your questions and help you book your next appointment.
           </p>
           <div className="flex flex-col gap-6 mt-4">
-            <div className="flex items-center gap-4 text-gray-300">
+            <div className="flex items-start gap-4 text-gray-300">
               <span className="font-serif text-gold text-2xl min-w-[100px]">Address:</span>
-              <span className="font-light text-lg">255 Boul. de la Concorde O., Laval, QC H7N 5T1</span>
+              <span className="font-light text-lg">255 Boul. de la Concorde O.<br />Laval, QC H7N 5T1</span>
             </div>
             <div className="flex items-center gap-4 text-gray-300">
               <span className="font-serif text-gold text-2xl min-w-[100px]">Phone:</span>
