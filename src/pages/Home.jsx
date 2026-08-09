@@ -9,14 +9,14 @@ export default function Home() {
   const [showAllCuts, setShowAllCuts] = useState(false);
 
   const signatureCuts = [
-    { title: t('home.cut1'), img: "/cut_executive.jpg" },
-    { title: t('home.cut2'), img: "/cut_urban_texture.jpg" },
-    { title: t('home.cut3'), img: "/cut_classic_pompadour.jpg" },
-    { title: t('home.cut4'), img: "/cut_zero_fade.jpg" },
-    { title: t('home.cut5'), img: "/cut_twists.jpg" },
-    { title: t('home.cut6'), img: "/cut_undercut.jpg" },
-    { title: t('home.cut7'), img: "/cut_waves.jpg" },
-    { title: t('home.cut8'), img: "/cut_blowout.jpg" }
+    { title: t('home.cut1'), img: "/cut_executive.webp" },
+    { title: t('home.cut2'), img: "/cut_urban_texture.webp" },
+    { title: t('home.cut3'), img: "/cut_classic_pompadour.webp" },
+    { title: t('home.cut4'), img: "/cut_zero_fade.webp" },
+    { title: t('home.cut5'), img: "/cut_twists.webp" },
+    { title: t('home.cut6'), img: "/cut_undercut.webp" },
+    { title: t('home.cut7'), img: "/cut_waves.webp" },
+    { title: t('home.cut8'), img: "/cut_blowout.webp" }
   ];
 
   const displayedCuts = showAllCuts ? signatureCuts : signatureCuts.slice(0, 4);
