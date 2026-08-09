@@ -1,0 +1,17 @@
+{
+  "nav": { "home": "Inicio", "about": "Nosotros", "services": "Servicios", "contact": "Contacto", "book": "Reservar Ahora" },
+  "home": {
+    "hero_title": "La Experiencia Urbana y Elegante",
+    "hero_subtitle": "Donde la energía urbana se encuentra con la relajación tropical de lujo. Un santuario para el caballero moderno.",
+    "book_btn": "Reservar Cita",
+    "craft_title": "Nuestro Arte",
+    "craft_subtitle": "Atención meticulosa a los detalles, productos premium y un toque maestro. No solo cortamos cabello; curamos tu identidad.",
+    "feat1_title": "Cortes de Precisión", "feat1_desc": "Adaptados a tu estructura ósea y estilo personal. Desde desvanecidos clásicos hasta texturas modernas.",
+    "feat2_title": "Afeitado con Toalla Caliente", "feat2_desc": "La experiencia tradicional de navaja libre. Relajante, al ras e innegablemente suave.",
+    "feat3_title": "Rituales de Aseo", "feat3_desc": "Esculpido de barba, tratamientos faciales y masajes capilares diseñados para el hombre exigente.",
+    "sig_cuts": "Cortes Exclusivos", "sig_subtitle": "Explora nuestro portafolio de estilos seleccionados.",
+    "view_all": "Ver Todo", "view_portfolio": "Ver Todo el Portafolio",
+    "cut1": "El Ejecutivo", "cut2": "Textura Urbana", "cut3": "Pompadour Clásico", "cut4": "Desvanecido a Cero"
+  },
+  "footer": { "rights": "Punta Cana Barbier. Urbain Élégant." }
+}

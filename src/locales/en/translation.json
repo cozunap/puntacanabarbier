@@ -1,0 +1,17 @@
+{
+  "nav": { "home": "Home", "about": "About Us", "services": "Services", "contact": "Contact", "book": "Book Now" },
+  "home": {
+    "hero_title": "The Urban & Elegant Experience",
+    "hero_subtitle": "Where raw urban energy meets high-end tropical relaxation. A sanctuary for the modern gentleman.",
+    "book_btn": "Book Appointment",
+    "craft_title": "Our Craft",
+    "craft_subtitle": "Meticulous attention to detail, premium products, and a masterful touch. We don't just cut hair; we curate your identity.",
+    "feat1_title": "Precision Cuts", "feat1_desc": "Tailored to your bone structure and personal style. From classic tapers to modern textures.",
+    "feat2_title": "Hot Towel Shaves", "feat2_desc": "The traditional straight razor experience. Relaxing, close, and uncompromisingly smooth.",
+    "feat3_title": "Grooming Rituals", "feat3_desc": "Beard sculpting, facial treatments, and scalp massages designed for the discerning man.",
+    "sig_cuts": "Signature Cuts", "sig_subtitle": "Explore our portfolio of curated styles.",
+    "view_all": "View All", "view_portfolio": "View All Portfolio",
+    "cut1": "The Executive", "cut2": "Urban Texture", "cut3": "Classic Pompadour", "cut4": "Zero Fade"
+  },
+  "footer": { "rights": "Punta Cana Barbier. Urbain Élégant." }
+}

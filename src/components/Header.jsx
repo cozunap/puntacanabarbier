@@ -1,16 +1,18 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function Header({ onOpenBooking }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Contact', path: '/contact' },
+    { name: t('nav.home'), path: '/' },
+    { name: t('nav.about'), path: '/about' },
+    { name: t('nav.services'), path: '/services' },
+    { name: t('nav.contact'), path: '/contact' },
   ];
 
   return (
@@ -22,28 +24,30 @@ export default function Header({ onOpenBooking }) {
           <img src="/Punta_Cana_Barbier_Logo.webp" alt="Punta Cana Barbier Logo" className="h-20 w-auto" />
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-8 items-center">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`text-sm tracking-[0.1em] uppercase font-medium transition-colors duration-300 hover:text-gold ${
-                location.pathname === link.path ? 'text-gold border-b-2 border-gold pb-1' : 'text-gray-300'
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
+        {/* Desktop Nav & Book Button Group */}
+        <div className="hidden md:flex items-center gap-8 ml-auto">
+          <nav className="flex gap-8 items-center">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`text-sm tracking-[0.1em] uppercase font-medium transition-colors duration-300 hover:text-gold ${
+                  location.pathname === link.path ? 'text-gold border-b-2 border-gold pb-1' : 'text-gray-300'
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
 
-        {/* Book Now Button */}
-        <button 
-          onClick={onOpenBooking}
-          className="hidden md:block bg-gold text-navy px-6 py-2 rounded-sm text-sm uppercase tracking-widest font-bold hover:bg-gold-light transition-colors premium-hover"
-        >
-          Book Now
-        </button>
+          {/* Book Now Button */}
+          <button 
+            onClick={onOpenBooking}
+            className="bg-gold text-navy px-6 py-2 rounded-sm text-sm uppercase tracking-widest font-bold hover:bg-gold-light transition-colors premium-hover"
+          >
+            {t('nav.book')}
+          </button>
+        </div>
 
         {/* Mobile Menu Toggle */}
         <button 
@@ -76,7 +80,7 @@ export default function Header({ onOpenBooking }) {
             }}
             className="bg-gold text-navy px-6 py-3 rounded-sm text-sm uppercase tracking-widest font-bold mt-4 w-full"
           >
-            Book Now
+            {t('nav.book')}
           </button>
         </div>
       )}

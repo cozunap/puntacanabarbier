@@ -1,0 +1,17 @@
+{
+  "nav": { "home": "Accueil", "about": "À Propos", "services": "Services", "contact": "Contact", "book": "Réserver" },
+  "home": {
+    "hero_title": "L'expérience Urbaine et Élégante",
+    "hero_subtitle": "Où l'énergie urbaine brute rencontre la relaxation tropicale haut de gamme. Un sanctuaire pour le gentleman moderne.",
+    "book_btn": "Prendre Rendez-vous",
+    "craft_title": "Notre Art",
+    "craft_subtitle": "Une attention méticuleuse aux détails, des produits haut de gamme et une touche de maître. Nous ne faisons pas que couper des cheveux ; nous créons votre identité.",
+    "feat1_title": "Coupes de Précision", "feat1_desc": "Adaptées à la structure de votre visage et à votre style. Des dégradés classiques aux textures modernes.",
+    "feat2_title": "Rasage Serviette Chaude", "feat2_desc": "L'expérience traditionnelle du rasoir coupe-choux. Relaxant, de près et incroyablement doux.",
+    "feat3_title": "Rituels de Soins", "feat3_desc": "Taille de barbe, soins du visage et massages du cuir chevelu conçus pour l'homme exigeant.",
+    "sig_cuts": "Coupes Signatures", "sig_subtitle": "Explorez notre portfolio de styles sélectionnés.",
+    "view_all": "Voir Tout", "view_portfolio": "Voir Tout le Portfolio",
+    "cut1": "L'Exécutif", "cut2": "Texture Urbaine", "cut3": "Pompadour Classique", "cut4": "Dégradé à Zéro"
+  },
+  "footer": { "rights": "Punta Cana Barbier. Urbain Élégant." }
+}
