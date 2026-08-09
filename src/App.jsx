@@ -5,7 +5,6 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import { BookingProvider } from './BookingContext';
-import './App.css';
 
 function App() {
   return (
