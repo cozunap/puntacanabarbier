@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ArrowRight, Scissors, Sparkles, Smile } from 'lucide-react';
 import { useBooking } from '../BookingContext';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Lightbox from '../components/Lightbox';
 
 export default function Home() {
@@ -10,6 +10,23 @@ export default function Home() {
   const { t } = useTranslation();
   const [showAllCuts, setShowAllCuts] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  
+  // Hero Slider State
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroSlides = [
+    { id: 0, img: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" }, // Barbershop interior
+    { id: 1, img: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" }, // Barber tools/moody
+    { id: 2, img: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" }  // Premium barber cut
+  ];
+
+  // Auto-rotate slider
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000); // 5 seconds
+    return () => clearInterval(timer);
+  }, [heroSlides.length]);
 
   const signatureCuts = [
     { title: t('home.cut1'), img: "/cut_executive.webp" },
@@ -43,24 +60,30 @@ export default function Home() {
     <div className="flex flex-col w-full overflow-hidden">
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center justify-center px-6 text-center pt-20">
-        <motion.div 
-          initial={{ scale: 1.1, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute inset-0 z-0"
-        >
-          <div 
-            className="bg-cover bg-center w-full h-full opacity-40" 
-            style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAraE8hzFdMmex4llxa4U8IK-dZziMdjUiHuhIhUWtDZBNWN5O0MubJkH_xDjhCj_5nQwDWxJQpgWR136-KJthR4NxzoQpdFQyHH0e0dn22RelQoP_ndYURsRsN1O_sccXJDJx7y81-xpk1CXXBAXZhrIHYMSBwhRzPUSfmnVx5V9L4W003M8efwdhkAvMB_yvKXQOl1fOc10gbpuw9Wi5m_4gyHHO4_ZA8CEJOISWWa0x-BlSX6PUm')" }}
-          ></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-navy/50 via-navy/80 to-navy"></div>
-        </motion.div>
+        <div className="absolute inset-0 z-0 overflow-hidden bg-navy">
+          <AnimatePresence initial={false}>
+            <motion.div 
+              key={currentSlide}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="absolute inset-0"
+            >
+              <div 
+                className="bg-cover bg-center w-full h-full opacity-40" 
+                style={{ backgroundImage: `url('${heroSlides[currentSlide].img}')` }}
+              ></div>
+            </motion.div>
+          </AnimatePresence>
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/80 to-navy z-10"></div>
+        </div>
         
         <motion.div 
           variants={staggerContainer}
           initial="hidden"
           animate="show"
-          className="relative z-10 max-w-3xl flex flex-col items-center gap-8"
+          className="relative z-20 max-w-3xl flex flex-col items-center gap-8"
         >
           <motion.h1 variants={fadeUp} className="font-serif text-5xl md:text-7xl text-white drop-shadow-lg leading-tight">
             {t('home.hero_title')}
@@ -77,6 +100,20 @@ export default function Home() {
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
           </motion.button>
         </motion.div>
+
+        {/* Slide Indicators */}
+        <div className="absolute bottom-10 left-0 w-full flex justify-center gap-3 z-20">
+          {heroSlides.map((slide, idx) => (
+            <button
+              key={slide.id}
+              onClick={() => setCurrentSlide(idx)}
+              className={`h-1 rounded-full transition-all duration-300 ${
+                currentSlide === idx ? 'w-8 bg-gold' : 'w-2 bg-white/30 hover:bg-white/60'
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            ></button>
+          ))}
+        </div>
       </section>
 
       {/* Our Craft Section */}
