@@ -1,6 +1,9 @@
 import { ArrowRight, Scissors, Sparkles, Smile } from 'lucide-react';
+import { useBooking } from '../BookingContext';
 
 export default function Home() {
+  const { openBooking } = useBooking();
+
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
@@ -20,7 +23,10 @@ export default function Home() {
           <p className="font-sans text-lg md:text-xl text-gray-300 max-w-xl mx-auto font-light">
             Where raw urban energy meets high-end tropical relaxation. A sanctuary for the modern gentleman.
           </p>
-          <button className="bg-gold text-navy font-bold uppercase tracking-widest py-4 px-8 mt-4 hover:bg-gold-light premium-hover flex items-center gap-3 group rounded-sm text-sm">
+          <button 
+            onClick={openBooking}
+            className="bg-gold text-navy font-bold uppercase tracking-widest py-4 px-8 mt-4 hover:bg-gold-light premium-hover flex items-center gap-3 group rounded-sm text-sm"
+          >
             Book Appointment
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
           </button>

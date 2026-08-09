@@ -3,9 +3,9 @@ export default function Footer() {
     <footer className="bg-navy-dark text-white w-full py-16 border-t border-white/10 mt-auto">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-12">
         <div className="flex flex-col gap-4">
-          <span className="font-serif text-2xl text-gold">Punta Cana Barbershop</span>
+          <span className="font-serif text-2xl text-gold">Punta Cana Barbier</span>
           <p className="text-gray-400 font-light max-w-xs">
-            © {new Date().getFullYear()} Punta Cana Barbershop. Urbain Élégant.
+            © {new Date().getFullYear()} Punta Cana Barbier. Urbain Élégant.
           </p>
         </div>
         
