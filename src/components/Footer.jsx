@@ -14,8 +14,8 @@ export default function Footer() {
             alt="Punta Cana Barbier" 
             className="w-40 md:w-48 h-auto object-contain drop-shadow-lg" 
           />
-          <p className="text-gray-400 font-light leading-relaxed max-w-sm">
-            Urbain Élégant. The ultimate premium grooming experience in the heart of Laval.
+          <p className="text-gray-400 font-light leading-relaxed max-w-sm text-[10px] tracking-wide uppercase">
+            The ultimate premium grooming experience in the heart of Laval.
           </p>
         </div>
 
@@ -30,7 +30,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Contact & Hours Column (Right) */}
+        {/* Contact Column (Right) */}
         <div className="md:col-span-6 lg:col-span-4 flex flex-col gap-8">
           <div className="flex flex-col gap-3 text-gray-300 font-light">
             <h4 className="font-serif text-xl text-gold mb-1">Contact Us</h4>
@@ -41,16 +41,6 @@ export default function Footer() {
             <a href="tel:+14388836129" className="text-white hover:text-gold transition-colors">
               (438) 883-6129
             </a>
-          </div>
-
-          <div className="flex flex-col gap-3 text-gray-300 font-light">
-            <h4 className="font-serif text-xl text-gold mb-1">Hours</h4>
-            <div className="grid grid-cols-2 gap-2 max-w-[200px]">
-              <span>Mon - Sat</span>
-              <span className="text-white text-right">9AM - 8PM</span>
-              <span>Sunday</span>
-              <span className="text-gold text-right">Closed</span>
-            </div>
           </div>
         </div>
 
