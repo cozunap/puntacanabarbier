@@ -51,9 +51,12 @@ export default function Footer() {
       </div>
 
       {/* Copyright Bar */}
-      <div className="w-full border-t border-white/5 bg-[#080808] py-6 text-center">
-        <p className="text-gray-500 font-light text-xs tracking-widest uppercase">
+      <div className="w-full border-t border-white/5 bg-[#080808] py-6 flex flex-col items-center gap-2">
+        <p className="text-gray-500 font-light text-xs tracking-widest uppercase text-center">
           © {new Date().getFullYear()} Punta Cana Barbier. {t('footer.rights')}
+        </p>
+        <p className="text-gray-600 font-light text-[10px] tracking-widest uppercase text-center">
+          Developed by <a href="https://cozuna.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light transition-colors">cozuna.com</a>
         </p>
       </div>
     </footer>
