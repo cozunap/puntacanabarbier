@@ -3,11 +3,13 @@ import { ArrowRight, Scissors, Sparkles, Smile } from 'lucide-react';
 import { useBooking } from '../BookingContext';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import Lightbox from '../components/Lightbox';
 
 export default function Home() {
   const { openBooking } = useBooking();
   const { t } = useTranslation();
   const [showAllCuts, setShowAllCuts] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(null);
 
   const signatureCuts = [
     { title: t('home.cut1'), img: "/cut_executive.webp" },
@@ -144,7 +146,12 @@ export default function Home() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             {displayedCuts.map((cut, idx) => (
-              <motion.div variants={fadeUp} key={idx} className="group relative overflow-hidden rounded-md aspect-[3/4] premium-hover cursor-pointer">
+              <motion.div 
+                variants={fadeUp} 
+                key={idx} 
+                onClick={() => setLightboxIndex(idx)}
+                className="group relative overflow-hidden rounded-md aspect-[3/4] premium-hover cursor-pointer"
+              >
                 <div 
                   className="bg-cover bg-center w-full h-full group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]" 
                   style={{ backgroundImage: `url('${cut.img}')` }}
@@ -164,6 +171,14 @@ export default function Home() {
           </button>
         </div>
       </section>
+
+      <Lightbox 
+        images={signatureCuts}
+        currentIndex={lightboxIndex}
+        onClose={() => setLightboxIndex(null)}
+        onNext={() => setLightboxIndex((prev) => (prev === signatureCuts.length - 1 ? 0 : prev + 1))}
+        onPrev={() => setLightboxIndex((prev) => (prev === 0 ? signatureCuts.length - 1 : prev - 1))}
+      />
     </div>
   );
 }
