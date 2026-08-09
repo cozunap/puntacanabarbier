@@ -75,10 +75,10 @@ export default function Home() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: t('home.cut1'), img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBlX9kLQllC9WIkcaKB4aMpxwGad66NFstZV9mV5SdKHmyZ66y6zlzFE5zwWGC_FjUZXiEfaN8ejxCNT-_m4D1yUH6AojrZyqGvfd_eGTegW88DUYdyEW_gkYYV-e8dkLC45vj_wjPpEbWFekdfhcOXJVZ-0vl173i3skYt4PFrvbwkBupHOxnFKric6MMfV5HXTJ7FxgLAgNEZmGrTgpde6llZIVGzj0QLqfcRINMZ2Twav_QUKzn9" },
-              { title: t('home.cut2'), img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCdNvHQAMGJfMR4FyaG5yDMTKpAJOnnSFjp7NEpuLhfWntz9ZEpJUe_XLcz-a4ugkEcQF2aOktZjCrchfLDRb4klJkT29KHFRT10dM_SdC1C7f6OH47GpIFPC_ZsyAfhZj-vXtqcnXVlm8Vi_MibVaTIErZYgG5NzTQ42tD7LY-34uYdgaAti1wiOE7RKpdYYFthAmjR0oEiOvauJEkcTxL3xAM0E3bLpAGAOxWUu4_gXsfdjEtca8J" },
-              { title: t('home.cut3'), img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBIWOaVq0GHncUjDaJniIS1v4oc61XK13bfXl_sdEHkyZ-pfq5Kcwl-xlUqSSM87aiw-389HycXYS74YzgJ3b0uhMwg3qrpcjQQpWFjowzUeehlER9BaMZB80qvXH7yCMl2l2TPGgGbWIdTCQMWw4klPr2oMlftfOmnmUnyEPsH4m-YEgy3qFjU9u8qFgXr27Em0sgIMTIXazpK1pZauwwOufttC7IfVncuIBZNWZXl18M65dtXXbGk" },
-              { title: t('home.cut4'), img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBghMpCmeOTYhRhZGfTF3o8oDBTnVW1r653BHwPj5zf3_zyco-vCD2pRr-Mdeav6LZdJDEFHIEXProLrinYDAiaNwenivNIsAI9jQMtXbK-Mk_IoZeycvW8R6tRgrogGuwXXXuu_9KuBW9mLARX1KYLvxhzuoBc9axOB9JjV8iA8ObGTEoE-5AU5u4YF_QkgCUdgPCbN0W52HS87bjF8ocYYaJ7DFFm0OO76bh6lXAhZY21mm6X92RT" }
+              { title: t('home.cut1'), img: "/cut_executive.jpg" },
+              { title: t('home.cut2'), img: "/cut_urban_texture.jpg" },
+              { title: t('home.cut3'), img: "/cut_classic_pompadour.jpg" },
+              { title: t('home.cut4'), img: "/cut_zero_fade.jpg" }
             ].map((cut, idx) => (
               <div key={idx} className="group relative overflow-hidden rounded-md aspect-[3/4] premium-hover">
                 <div 
