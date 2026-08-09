@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ArrowRight, Scissors, Sparkles, Smile } from 'lucide-react';
 import { useBooking } from '../BookingContext';
 import { useTranslation } from 'react-i18next';
@@ -5,6 +6,20 @@ import { useTranslation } from 'react-i18next';
 export default function Home() {
   const { openBooking } = useBooking();
   const { t } = useTranslation();
+  const [showAllCuts, setShowAllCuts] = useState(false);
+
+  const signatureCuts = [
+    { title: t('home.cut1'), img: "/cut_executive.jpg" },
+    { title: t('home.cut2'), img: "/cut_urban_texture.jpg" },
+    { title: t('home.cut3'), img: "/cut_classic_pompadour.jpg" },
+    { title: t('home.cut4'), img: "/cut_zero_fade.jpg" },
+    { title: t('home.cut5'), img: "/cut_twists.jpg" },
+    { title: t('home.cut6'), img: "/cut_undercut.jpg" },
+    { title: t('home.cut7'), img: "/cut_waves.jpg" },
+    { title: t('home.cut8'), img: "/cut_blowout.jpg" }
+  ];
+
+  const displayedCuts = showAllCuts ? signatureCuts : signatureCuts.slice(0, 4);
 
   return (
     <div className="flex flex-col w-full">
@@ -68,18 +83,16 @@ export default function Home() {
               <h2 className="font-serif text-4xl text-gold mb-4">{t('home.sig_cuts')}</h2>
               <p className="font-sans text-lg text-gray-300 font-light">{t('home.sig_subtitle')}</p>
             </div>
-            <button className="hidden md:flex items-center gap-2 text-gold uppercase tracking-widest text-sm hover:text-gold-light transition-colors font-medium">
-              {t('home.view_all')} <ArrowRight size={18} />
+            <button 
+              onClick={() => setShowAllCuts(!showAllCuts)}
+              className="hidden md:flex items-center gap-2 text-gold uppercase tracking-widest text-sm hover:text-gold-light transition-colors font-medium"
+            >
+              {showAllCuts ? t('home.view_less') : t('home.view_all')} <ArrowRight size={18} className={`transition-transform ${showAllCuts ? '-rotate-90' : ''}`} />
             </button>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: t('home.cut1'), img: "/cut_executive.jpg" },
-              { title: t('home.cut2'), img: "/cut_urban_texture.jpg" },
-              { title: t('home.cut3'), img: "/cut_classic_pompadour.jpg" },
-              { title: t('home.cut4'), img: "/cut_zero_fade.jpg" }
-            ].map((cut, idx) => (
+            {displayedCuts.map((cut, idx) => (
               <div key={idx} className="group relative overflow-hidden rounded-md aspect-[3/4] premium-hover">
                 <div 
                   className="bg-cover bg-center w-full h-full group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]" 
@@ -92,8 +105,11 @@ export default function Home() {
             ))}
           </div>
           
-          <button className="mt-12 w-full md:hidden flex justify-center items-center gap-2 text-gold border border-gold font-sans uppercase tracking-widest py-4 rounded-sm hover:bg-gold/10 transition-colors text-sm font-medium">
-            {t('home.view_portfolio')}
+          <button 
+            onClick={() => setShowAllCuts(!showAllCuts)}
+            className="mt-12 w-full md:hidden flex justify-center items-center gap-2 text-gold border border-gold font-sans uppercase tracking-widest py-4 rounded-sm hover:bg-gold/10 transition-colors text-sm font-medium"
+          >
+            {showAllCuts ? t('home.view_less') : t('home.view_portfolio')}
           </button>
         </div>
       </section>

@@ -10,8 +10,9 @@
     "feat2_title": "Afeitado con Toalla Caliente", "feat2_desc": "La experiencia tradicional de navaja libre. Relajante, al ras e innegablemente suave.",
     "feat3_title": "Rituales de Aseo", "feat3_desc": "Esculpido de barba, tratamientos faciales y masajes capilares diseñados para el hombre exigente.",
     "sig_cuts": "Cortes Exclusivos", "sig_subtitle": "Explora nuestro portafolio de estilos seleccionados.",
-    "view_all": "Ver Todo", "view_portfolio": "Ver Todo el Portafolio",
-    "cut1": "El Ejecutivo", "cut2": "Textura Urbana", "cut3": "Pompadour Clásico", "cut4": "Desvanecido a Cero"
+    "view_all": "Ver Todo", "view_portfolio": "Ver Todo el Portafolio", "view_less": "Ver Menos",
+    "cut1": "El Ejecutivo", "cut2": "Textura Urbana", "cut3": "Pompadour Clásico", "cut4": "Desvanecido a Cero",
+    "cut5": "Fade Alto con Twists", "cut6": "Undercut Desconectado", "cut7": "Taper Bajo con Ondas", "cut8": "Taper Blowout"
   },
   "footer": { "rights": "Punta Cana Barbier. Urbain Élégant." }
 }

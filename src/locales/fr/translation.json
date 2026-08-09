@@ -10,8 +10,9 @@
     "feat2_title": "Rasage Serviette Chaude", "feat2_desc": "L'expérience traditionnelle du rasoir coupe-choux. Relaxant, de près et incroyablement doux.",
     "feat3_title": "Rituels de Soins", "feat3_desc": "Taille de barbe, soins du visage et massages du cuir chevelu conçus pour l'homme exigeant.",
     "sig_cuts": "Coupes Signatures", "sig_subtitle": "Explorez notre portfolio de styles sélectionnés.",
-    "view_all": "Voir Tout", "view_portfolio": "Voir Tout le Portfolio",
-    "cut1": "L'Exécutif", "cut2": "Texture Urbaine", "cut3": "Pompadour Classique", "cut4": "Dégradé à Zéro"
+    "view_all": "Voir Tout", "view_portfolio": "Voir Tout le Portfolio", "view_less": "Voir Moins",
+    "cut1": "L'Exécutif", "cut2": "Texture Urbaine", "cut3": "Pompadour Classique", "cut4": "Dégradé à Zéro",
+    "cut5": "Dégradé Haut Twists", "cut6": "Undercut Déconnecté", "cut7": "Dégradé Bas Waves", "cut8": "Dégradé Blowout"
   },
   "footer": { "rights": "Punta Cana Barbier. Urbain Élégant." }
 }

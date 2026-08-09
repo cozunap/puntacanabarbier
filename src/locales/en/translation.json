@@ -10,8 +10,9 @@
     "feat2_title": "Hot Towel Shaves", "feat2_desc": "The traditional straight razor experience. Relaxing, close, and uncompromisingly smooth.",
     "feat3_title": "Grooming Rituals", "feat3_desc": "Beard sculpting, facial treatments, and scalp massages designed for the discerning man.",
     "sig_cuts": "Signature Cuts", "sig_subtitle": "Explore our portfolio of curated styles.",
-    "view_all": "View All", "view_portfolio": "View All Portfolio",
-    "cut1": "The Executive", "cut2": "Urban Texture", "cut3": "Classic Pompadour", "cut4": "Zero Fade"
+    "view_all": "View All", "view_portfolio": "View All Portfolio", "view_less": "View Less",
+    "cut1": "The Executive", "cut2": "Urban Texture", "cut3": "Classic Pompadour", "cut4": "Zero Fade",
+    "cut5": "High Fade Twists", "cut6": "Disconnected Undercut", "cut7": "Low Taper Waves", "cut8": "Blowout Taper"
   },
   "footer": { "rights": "Punta Cana Barbier. Urbain Élégant." }
 }
