@@ -23,10 +23,29 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    /* Bloqueo de Selección de Texto */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
+  }
+
+  /* Permitir selección en inputs y textareas */
+  input, textarea {
+    user-select: auto;
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+  }
+
+  /* Protección Anti-Arrastre de Imágenes */
+  img {
+    -webkit-user-drag: none;
+    user-drag: none;
   }
 }
 
