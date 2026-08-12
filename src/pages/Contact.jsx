@@ -107,20 +107,17 @@ export default function Contact() {
         <div className="absolute inset-0 bg-navy/30 mix-blend-overlay pointer-events-none z-10"></div>
 
         {/* Custom Marker */}
-        <motion.a 
+        <a 
           href="https://www.google.com/maps/dir//255+Boul.+de+la+Concorde+O.,+Laval,+QC+H7N+5T1"
           target="_blank"
           rel="noopener noreferrer"
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: [0, -10, 0], opacity: 1 }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-          className="relative z-20 flex flex-col items-center justify-center cursor-pointer group"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[90%] z-20 flex flex-col items-center justify-center cursor-pointer group"
         >
           <div className="bg-navy p-3 rounded-full border-2 border-gold shadow-[0_0_30px_rgba(184,154,90,0.6)] group-hover:scale-110 transition-transform duration-300">
-            <img src="/Punta_Cana_Barbier_Logo.webp" alt="Punta Cana Barbier" className="w-16 h-16 object-contain" />
+            <img src="/Punta_Cana_Barbier_Logo.webp" alt="Punta Cana Barbier" className="w-12 h-12 object-contain" />
           </div>
-          <div className="w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[16px] border-t-gold mt-[-2px] group-hover:translate-y-1 transition-transform duration-300"></div>
-        </motion.a>
+          <div className="w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[14px] border-t-gold mt-[-2px]"></div>
+        </a>
 
         {/* Get Directions Button */}
         <a 
