@@ -1,4 +1,6 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { menGridServices, womenServices } from '../data/services';
 import { useBooking } from '../BookingContext';
@@ -59,57 +61,90 @@ export default function Services() {
     </div>
   );
 
-  const MenuServiceSection = ({ title, servicesData }) => (
-    <div className="mb-24">
-      <motion.div 
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={fadeUp}
-        className="text-center mb-16"
-      >
-        <h2 className="font-serif text-4xl md:text-5xl text-gold mb-6">{title}</h2>
-        <div className="w-16 h-1 bg-gold/50 mx-auto"></div>
-      </motion.div>
+  const AccordionServiceSection = ({ title, servicesData }) => {
+    const [activeCategory, setActiveCategory] = useState(null);
 
-      <div className="columns-1 md:columns-2 gap-8 md:gap-12 max-w-5xl mx-auto w-full">
-        {servicesData.map((categoryBlock, index) => (
-          <motion.div 
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            key={index} 
-            className="break-inside-avoid mb-8 md:mb-12 bg-navy-light p-8 rounded-md border border-white/5 shadow-xl hover:border-gold/20 transition-all duration-500"
-          >
-            <motion.h3 variants={fadeUp} className="font-serif text-2xl text-gold mb-6 tracking-wide border-b border-white/10 pb-4">
-              {t(categoryBlock.categoryKey)}
-            </motion.h3>
-            <motion.ul variants={staggerContainer} className="flex flex-col gap-2">
-              {categoryBlock.itemKeys.map((service, sIdx) => (
-                <motion.li 
-                  variants={fadeUp}
-                  key={sIdx}
-                  onClick={() => openBooking(service)}
-                  className="group flex flex-col md:flex-row md:items-center justify-between py-4 border-b border-white/5 cursor-pointer hover:border-gold/30 transition-colors"
+    return (
+      <div className="mb-24">
+        <motion.div 
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeUp}
+          className="text-center mb-16"
+        >
+          <h2 className="font-serif text-4xl md:text-5xl text-gold mb-6">{title}</h2>
+          <div className="w-16 h-1 bg-gold/50 mx-auto"></div>
+        </motion.div>
+
+        <div className="flex flex-col gap-4 max-w-4xl mx-auto w-full">
+          {servicesData.map((categoryBlock, index) => {
+            const isActive = activeCategory === index;
+            
+            return (
+              <motion.div 
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={fadeUp}
+                key={index} 
+                className="bg-navy-light rounded-md border border-white/5 shadow-xl overflow-hidden"
+              >
+                <button 
+                  onClick={() => setActiveCategory(isActive ? null : index)}
+                  className={`w-full flex items-center justify-between p-6 md:p-8 text-left transition-colors duration-300 ${isActive ? 'bg-white/5' : 'hover:bg-white/5'}`}
                 >
-                  <span className="font-serif text-2xl text-white group-hover:text-gold transition-colors">{t(service)}</span>
-                  <span className="text-gold opacity-0 group-hover:opacity-100 transition-opacity text-sm tracking-widest uppercase mt-1 md:mt-0">{t('nav.book')}</span>
-                </motion.li>
-              ))}
-            </motion.ul>
-          </motion.div>
-        ))}
+                  <h3 className="font-serif text-2xl text-gold tracking-wide">
+                    {t(categoryBlock.categoryKey)}
+                  </h3>
+                  <motion.div
+                    animate={{ rotate: isActive ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-gold"
+                  >
+                    <ChevronDown size={28} />
+                  </motion.div>
+                </button>
+                
+                <AnimatePresence>
+                  {isActive && (
+                    <motion.div 
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                    >
+                      <div className="p-6 md:p-8 pt-0 border-t border-white/5">
+                        <ul className="flex flex-col gap-2">
+                          {categoryBlock.itemKeys.map((service, sIdx) => (
+                            <li 
+                              key={sIdx}
+                              onClick={() => openBooking(service)}
+                              className="group flex flex-col md:flex-row md:items-center justify-between py-4 border-b border-white/5 cursor-pointer hover:border-gold/30 transition-colors"
+                            >
+                              <span className="font-serif text-xl md:text-2xl text-white group-hover:text-gold transition-colors">{t(service)}</span>
+                              <span className="text-gold opacity-0 group-hover:opacity-100 transition-opacity text-sm tracking-widest uppercase mt-1 md:mt-0">{t('nav.book')}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <div className="flex flex-col w-full min-h-[60vh] py-section px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
 
       
       <GridServiceSection title={t('services.men_title')} servicesData={menGridServices} />
-      <MenuServiceSection title={t('services.women_title')} servicesData={womenServices} />
+      <AccordionServiceSection title={t('services.women_title')} servicesData={womenServices} />
     </div>
   );
 }
