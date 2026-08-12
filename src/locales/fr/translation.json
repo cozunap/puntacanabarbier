@@ -1,18 +1,88 @@
 {
   "nav": { "home": "Accueil", "about": "À Propos", "services": "Services", "contact": "Contact", "book": "Réserver" },
   "home": {
-    "hero_title": "L'expérience Urbaine et Élégante",
+    "hero_title": "L'Expérience Urbaine et Élégante",
     "hero_subtitle": "Où l'énergie urbaine brute rencontre la relaxation tropicale haut de gamme. Un sanctuaire pour le gentleman moderne.",
     "book_btn": "Prendre Rendez-vous",
-    "craft_title": "Notre Art",
-    "craft_subtitle": "Une attention méticuleuse aux détails, des produits haut de gamme et une touche de maître. Nous ne faisons pas que couper des cheveux ; nous créons votre identité.",
-    "feat1_title": "Coupes de Précision", "feat1_desc": "Adaptées à la structure de votre visage et à votre style. Des dégradés classiques aux textures modernes.",
-    "feat2_title": "Rasage Serviette Chaude", "feat2_desc": "L'expérience traditionnelle du rasoir coupe-choux. Relaxant, de près et incroyablement doux.",
+    "craft_title": "Notre Savoir-Faire",
+    "craft_subtitle": "Une attention méticuleuse aux détails, des produits haut de gamme et une touche magistrale. Nous ne faisons pas que couper les cheveux; nous soignons votre identité.",
+    "feat1_title": "Coupes de Précision", "feat1_desc": "Adapté à votre structure osseuse et à votre style personnel. Des dégradés classiques aux textures modernes.",
+    "feat2_title": "Rasages Serviette Chaude", "feat2_desc": "L'expérience traditionnelle au coupe-choux. Relaxant, de près et d'une douceur absolue.",
     "feat3_title": "Rituels de Soins", "feat3_desc": "Taille de barbe, soins du visage et massages du cuir chevelu conçus pour l'homme exigeant.",
-    "sig_cuts": "Coupes Signatures", "sig_subtitle": "Explorez notre portfolio de styles sélectionnés.",
+    "sig_cuts": "Coupes Signature", "sig_subtitle": "Explorez notre portfolio de styles sélectionnés.",
     "view_all": "Voir Tout", "view_portfolio": "Voir Tout le Portfolio", "view_less": "Voir Moins",
     "cut1": "L'Exécutif", "cut2": "Texture Urbaine", "cut3": "Pompadour Classique", "cut4": "Dégradé à Zéro",
-    "cut5": "Dégradé Haut Twists", "cut6": "Undercut Déconnecté", "cut7": "Dégradé Bas Waves", "cut8": "Dégradé Blowout"
+    "cut5": "Tresses et Dégradé Haut", "cut6": "Undercut Déconnecté", "cut7": "Ondulations et Dégradé Bas", "cut8": "Blowout Taper"
   },
-  "footer": { "rights": "Punta Cana Barbier. Urbain Élégant." }
+  "footer": { "rights": "Punta Cana Barbier. Urbain Élégant." },
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Une gamme complète de services de soins et de salon haut de gamme conçus pour élever votre identité.",
+    "men": {
+      "category": "SERVICE POUR HOMMES",
+      "tressage": "Tressage",
+      "defrisage": "Defrisage",
+      "coupe": "Coupe",
+      "coloration": "Coloration",
+      "barbe": "Barbe"
+    },
+    "women": {
+      "brushing_cut": {
+        "category": "BRUSING ET COUPE",
+        "cut_adjustment": "Coupe Ajustement",
+        "brushing_short": "Brushing Cheveux Courts",
+        "cut_women": "Coupe Femme",
+        "brushing_medium": "Brushing Cheveux Mi-Longs",
+        "brushing_long": "Brushing Cheveux Longs",
+        "cut_brushing_short": "Coupe+Brushing Cheveux Court",
+        "brushing_very_long": "Brushing Cheveux Très Longs",
+        "cut_brushing_medium": "Coupe + Brushing Cheveux Mi-Long",
+        "cut_brushing_long": "Coupe + Brushing Cheveux Long"
+      },
+      "relaxer": {
+        "category": "DÉFRISAGE",
+        "protective": "Défrisant Protective",
+        "affirm": "Défrisant Affirm",
+        "olive_oil": "Défrisant Olive Oil",
+        "motions": "Défrisant Motions",
+        "mizani": "Défrisant Mizani"
+      },
+      "color": {
+        "category": "MÈCHES ET COLORATION",
+        "full_head": "Coloration Tête Complète",
+        "top_highlights": "Mèches Dessus Tête",
+        "root_touchup": "Coloration Racine",
+        "extra": "Coloration Extra",
+        "mousse": "Coloration Mousse",
+        "foil_highlights": "Mèches Par Papier",
+        "half_highlights": "Mèches Demi Tête",
+        "full_highlights": "Mèches Tête Complète"
+      },
+      "treatments": {
+        "category": "TRAITEMENTS",
+        "olaplex": "Olaplex + Brusing",
+        "keratin_long": "Traitement Keratine Long",
+        "keratin_short": "Traitement Keratine Court",
+        "kerastraight_moisture": "Traitement Kerastraight Moisture",
+        "kerastraight_protein": "Traitement Kerastraight Proteine",
+        "moroccanoil": "Traitement Moroccanoil"
+      },
+      "other": {
+        "category": "AUTRES SERVICES",
+        "weave_removal": "Défaire Tissage",
+        "glued_row": "Extension Rangée (Colle)",
+        "weave_sewin": "Greffes Tissage",
+        "extensions": "Extensions de Cheveux",
+        "short_bleach": "Décoloration Cheveux Courts",
+        "kids_cut": "Coupe Enfant",
+        "shampoo": "Shampooing",
+        "toner": "Toner",
+        "styling_short": "Coiffure Cheveux Courts",
+        "styling_medium": "Coiffure Cheveux Mi-Longs",
+        "styling_long": "Coiffure Cheveux Longs",
+        "curly_perm": "Permanente Bouclée",
+        "wedding": "Forfait Mariage"
+      }
+    }
+  }
 }

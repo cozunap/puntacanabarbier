@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { X, Check } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { allServicesFlat } from '../data/services';
 
 export default function BookingModal({ isOpen, onClose, initialService }) {
   const [selectedServices, setSelectedServices] = useState([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (isOpen) {
@@ -39,7 +41,7 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
         </button>
 
         <div className="p-8 md:p-12">
-          <h2 className="font-serif text-3xl md:text-4xl text-gold mb-2">Book an Appointment</h2>
+          <h2 className="font-serif text-3xl md:text-4xl text-gold mb-2">{t('nav.book', 'Book an Appointment')}</h2>
           <p className="text-gray-400 font-light mb-8">Select your services and schedule your visit.</p>
 
           <form className="flex flex-col gap-8">
@@ -72,7 +74,7 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
                       <div className={`w-5 h-5 rounded-sm flex items-center justify-center border ${isSelected ? 'bg-gold border-gold text-navy' : 'border-white/30'}`}>
                         {isSelected && <Check size={14} strokeWidth={3} />}
                       </div>
-                      <span className="text-sm text-gray-200">{service}</span>
+                      <span className="text-sm text-gray-200">{t(service)}</span>
                     </div>
                   );
                 })}

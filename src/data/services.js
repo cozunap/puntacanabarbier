@@ -1,92 +1,92 @@
 export const menServices = [
   {
-    category: "SERVICE POUR HOMMES",
-    image: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=800&auto=format&fit=crop", // Barbershop classic cut
-    items: [
-      "Tressage",
-      "Defrisage",
-      "Coupe",
-      "Coloration",
-      "Barbe"
+    categoryKey: "services.men.category",
+    image: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=800&auto=format&fit=crop",
+    itemKeys: [
+      "services.men.tressage",
+      "services.men.defrisage",
+      "services.men.coupe",
+      "services.men.coloration",
+      "services.men.barbe"
     ]
   }
 ];
 
 export const womenServices = [
   {
-    category: "BRUSING ET COUPE",
-    image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=800&auto=format&fit=crop", // Hair brushing/cutting
-    items: [
-      "Coupe Ajustement",
-      "Brushing Cheveux Courts",
-      "Coupe Femme",
-      "Brushing Cheveux Mi-Longs",
-      "Brushing Cheveux Longs",
-      "Coupe+Brushing Cheveux Court",
-      "Brushing Cheveux Très Longs",
-      "Coupe + Brushing Cheveux Mi-Long",
-      "Coupe + Brushing Cheveux Long"
+    categoryKey: "services.women.brushing_cut.category",
+    image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=800&auto=format&fit=crop",
+    itemKeys: [
+      "services.women.brushing_cut.cut_adjustment",
+      "services.women.brushing_cut.brushing_short",
+      "services.women.brushing_cut.cut_women",
+      "services.women.brushing_cut.brushing_medium",
+      "services.women.brushing_cut.brushing_long",
+      "services.women.brushing_cut.cut_brushing_short",
+      "services.women.brushing_cut.brushing_very_long",
+      "services.women.brushing_cut.cut_brushing_medium",
+      "services.women.brushing_cut.cut_brushing_long"
     ]
   },
   {
-    category: "DÉFRISAGE",
-    image: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=800&auto=format&fit=crop", // Hair treatment/relaxer
-    items: [
-      "Défrisant Protective",
-      "Défrisant Affirm",
-      "Défrisant Olive Oil",
-      "Défrisant Motions",
-      "Défrisant Mizani"
+    categoryKey: "services.women.relaxer.category",
+    image: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=800&auto=format&fit=crop",
+    itemKeys: [
+      "services.women.relaxer.protective",
+      "services.women.relaxer.affirm",
+      "services.women.relaxer.olive_oil",
+      "services.women.relaxer.motions",
+      "services.women.relaxer.mizani"
     ]
   },
   {
-    category: "MÈCHES ET COLORATION",
-    image: "https://images.unsplash.com/photo-1600948836101-f9ff09c1f076?q=80&w=800&auto=format&fit=crop", // Hair coloring
-    items: [
-      "Coloration Tête Complète",
-      "Mèches Dessus Tête",
-      "Coloration Racine",
-      "Coloration Extra",
-      "Coloration Mousse",
-      "Mèches Par Papier",
-      "Mèches Demi Tête",
-      "Mèches Tête Complète"
+    categoryKey: "services.women.color.category",
+    image: "https://images.unsplash.com/photo-1600948836101-f9ff09c1f076?q=80&w=800&auto=format&fit=crop",
+    itemKeys: [
+      "services.women.color.full_head",
+      "services.women.color.top_highlights",
+      "services.women.color.root_touchup",
+      "services.women.color.extra",
+      "services.women.color.mousse",
+      "services.women.color.foil_highlights",
+      "services.women.color.half_highlights",
+      "services.women.color.full_highlights"
     ]
   },
   {
-    category: "TRAITEMENTS",
-    image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800&auto=format&fit=crop", // Hair washing/treatment
-    items: [
-      "Olaplex + Brusing",
-      "Traitement Keratine Long",
-      "Traitement Keratine Court",
-      "Traitement Kerastraight Moisture",
-      "Traitement Kerastraight Proteine",
-      "Traitement Moroccanoil"
+    categoryKey: "services.women.treatments.category",
+    image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800&auto=format&fit=crop",
+    itemKeys: [
+      "services.women.treatments.olaplex",
+      "services.women.treatments.keratin_long",
+      "services.women.treatments.keratin_short",
+      "services.women.treatments.kerastraight_moisture",
+      "services.women.treatments.kerastraight_protein",
+      "services.women.treatments.moroccanoil"
     ]
   },
   {
-    category: "AUTRES SERVICES",
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop", // General salon
-    items: [
-      "Défaire Tissage",
-      "Extension Rangée (Colle)",
-      "Greffes Tissage",
-      "Extensions de Cheveux",
-      "Décoloration Cheveux Courts",
-      "Coupe Enfant",
-      "Shampooing",
-      "Toner",
-      "Coiffure Cheveux Courts",
-      "Coiffure Cheveux Mi-Longs",
-      "Coiffure Cheveux Longs",
-      "Permanente Bouclée",
-      "Forfait Mariage"
+    categoryKey: "services.women.other.category",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop",
+    itemKeys: [
+      "services.women.other.weave_removal",
+      "services.women.other.glued_row",
+      "services.women.other.weave_sewin",
+      "services.women.other.extensions",
+      "services.women.other.short_bleach",
+      "services.women.other.kids_cut",
+      "services.women.other.shampoo",
+      "services.women.other.toner",
+      "services.women.other.styling_short",
+      "services.women.other.styling_medium",
+      "services.women.other.styling_long",
+      "services.women.other.curly_perm",
+      "services.women.other.wedding"
     ]
   }
 ];
 
 export const allServicesFlat = [
-  ...menServices.flatMap(c => c.items),
-  ...womenServices.flatMap(c => c.items)
+  ...menServices.flatMap(c => c.itemKeys),
+  ...womenServices.flatMap(c => c.itemKeys)
 ];

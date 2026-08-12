@@ -14,5 +14,75 @@
     "cut1": "The Executive", "cut2": "Urban Texture", "cut3": "Classic Pompadour", "cut4": "Zero Fade",
     "cut5": "High Fade Twists", "cut6": "Disconnected Undercut", "cut7": "Low Taper Waves", "cut8": "Blowout Taper"
   },
-  "footer": { "rights": "Punta Cana Barbier. Urbain Élégant." }
+  "footer": { "rights": "Punta Cana Barbier. Urbain Élégant." },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "A comprehensive suite of premium grooming and salon services designed to elevate your identity and provide ultimate relaxation.",
+    "men": {
+      "category": "SERVICES FOR MEN",
+      "tressage": "Braiding",
+      "defrisage": "Relaxer",
+      "coupe": "Haircut",
+      "coloration": "Coloring",
+      "barbe": "Beard Trim"
+    },
+    "women": {
+      "brushing_cut": {
+        "category": "BRUSHING & CUT",
+        "cut_adjustment": "Trim/Adjustment",
+        "brushing_short": "Short Hair Brushing",
+        "cut_women": "Women's Haircut",
+        "brushing_medium": "Medium Hair Brushing",
+        "brushing_long": "Long Hair Brushing",
+        "cut_brushing_short": "Cut & Brushing (Short)",
+        "brushing_very_long": "Very Long Hair Brushing",
+        "cut_brushing_medium": "Cut & Brushing (Medium)",
+        "cut_brushing_long": "Cut & Brushing (Long)"
+      },
+      "relaxer": {
+        "category": "RELAXER",
+        "protective": "Protective Relaxer",
+        "affirm": "Affirm Relaxer",
+        "olive_oil": "Olive Oil Relaxer",
+        "motions": "Motions Relaxer",
+        "mizani": "Mizani Relaxer"
+      },
+      "color": {
+        "category": "HIGHLIGHTS & COLORING",
+        "full_head": "Full Head Color",
+        "top_highlights": "Top Highlights",
+        "root_touchup": "Root Touch-up",
+        "extra": "Extra Color",
+        "mousse": "Mousse Color",
+        "foil_highlights": "Foil Highlights",
+        "half_highlights": "Half Head Highlights",
+        "full_highlights": "Full Head Highlights"
+      },
+      "treatments": {
+        "category": "TREATMENTS",
+        "olaplex": "Olaplex + Brushing",
+        "keratin_long": "Long Hair Keratin",
+        "keratin_short": "Short Hair Keratin",
+        "kerastraight_moisture": "Kerastraight Moisture",
+        "kerastraight_protein": "Kerastraight Protein",
+        "moroccanoil": "Moroccanoil Treatment"
+      },
+      "other": {
+        "category": "OTHER SERVICES",
+        "weave_removal": "Weave Removal",
+        "glued_row": "Glued Row Extensions",
+        "weave_sewin": "Weave Sew-in",
+        "extensions": "Hair Extensions",
+        "short_bleach": "Short Hair Bleaching",
+        "kids_cut": "Kids Haircut",
+        "shampoo": "Shampoo",
+        "toner": "Toner",
+        "styling_short": "Short Hair Styling",
+        "styling_medium": "Medium Hair Styling",
+        "styling_long": "Long Hair Styling",
+        "curly_perm": "Curly Perm",
+        "wedding": "Wedding Package"
+      }
+    }
+  }
 }

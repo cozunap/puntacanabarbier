@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { menServices, womenServices } from '../data/services';
 import { useBooking } from '../BookingContext';
 
 export default function Services() {
   const { openBooking } = useBooking();
+  const { t } = useTranslation();
 
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -54,18 +56,18 @@ export default function Services() {
               {/* Content Half */}
               <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
                 <motion.h3 variants={fadeUp} className="font-serif text-2xl md:text-3xl text-gold mb-6 tracking-wide">
-                  {categoryBlock.category}
+                  {t(categoryBlock.categoryKey)}
                 </motion.h3>
                 <motion.ul variants={staggerContainer} className="flex flex-col gap-3">
-                  {categoryBlock.items.map((service, sIdx) => (
+                  {categoryBlock.itemKeys.map((service, sIdx) => (
                     <motion.li 
                       variants={fadeUp}
                       key={sIdx}
                       onClick={() => openBooking(service)}
                       className="group flex items-center justify-between py-3 border-b border-white/5 cursor-pointer hover:border-gold/30 transition-colors"
                     >
-                      <span className="text-gray-300 font-light group-hover:text-white transition-colors">{service}</span>
-                      <span className="text-gold opacity-0 group-hover:opacity-100 transition-opacity text-sm tracking-widest uppercase">Select</span>
+                      <span className="text-gray-300 font-light group-hover:text-white transition-colors">{t(service)}</span>
+                      <span className="text-gold opacity-0 group-hover:opacity-100 transition-opacity text-sm tracking-widest uppercase">{t('nav.book')}</span>
                     </motion.li>
                   ))}
                 </motion.ul>
