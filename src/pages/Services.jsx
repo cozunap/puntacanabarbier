@@ -91,10 +91,10 @@ export default function Services() {
                   variants={fadeUp}
                   key={sIdx}
                   onClick={() => openBooking(service)}
-                  className="group flex flex-col md:flex-row md:items-center justify-between py-2 border-b border-white/5 cursor-pointer hover:border-gold/30 transition-colors"
+                  className="group flex flex-col md:flex-row md:items-center justify-between py-4 border-b border-white/5 cursor-pointer hover:border-gold/30 transition-colors"
                 >
-                  <span className="text-gray-300 font-light group-hover:text-white transition-colors">{t(service)}</span>
-                  <span className="text-gold opacity-0 group-hover:opacity-100 transition-opacity text-xs tracking-widest uppercase mt-1 md:mt-0">{t('nav.book')}</span>
+                  <span className="font-serif text-2xl text-white group-hover:text-gold transition-colors">{t(service)}</span>
+                  <span className="text-gold opacity-0 group-hover:opacity-100 transition-opacity text-sm tracking-widest uppercase mt-1 md:mt-0">{t('nav.book')}</span>
                 </motion.li>
               ))}
             </motion.ul>
