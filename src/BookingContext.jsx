@@ -9,11 +9,22 @@ export function useBooking() {
 
 export function BookingProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [initialService, setInitialService] = useState(null);
+
+  const openBooking = (serviceName = null) => {
+    setInitialService(serviceName);
+    setIsOpen(true);
+  };
+
+  const closeBooking = () => {
+    setIsOpen(false);
+    setTimeout(() => setInitialService(null), 300); // Clear after animation
+  };
 
   return (
-    <BookingContext.Provider value={{ openBooking: () => setIsOpen(true), closeBooking: () => setIsOpen(false) }}>
+    <BookingContext.Provider value={{ openBooking, closeBooking }}>
       {children}
-      <BookingModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      <BookingModal isOpen={isOpen} onClose={closeBooking} initialService={initialService} />
     </BookingContext.Provider>
   );
 }

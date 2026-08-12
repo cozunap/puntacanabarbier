@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion';
+import { menServices, womenServices } from '../data/services';
+import { useBooking } from '../BookingContext';
 
 export default function Services() {
+  const { openBooking } = useBooking();
+
   const staggerContainer = {
     hidden: { opacity: 0 },
     show: {
@@ -16,6 +20,63 @@ export default function Services() {
     show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
   };
 
+  const ServiceSection = ({ title, servicesData, reverseStyle = false }) => (
+    <div className="mb-24">
+      <motion.div 
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={fadeUp}
+        className="text-center mb-16"
+      >
+        <h2 className="font-serif text-4xl md:text-5xl text-gold mb-6">{title}</h2>
+        <div className="w-16 h-1 bg-gold/50 mx-auto"></div>
+      </motion.div>
+
+      <div className="flex flex-col gap-12 max-w-5xl mx-auto w-full">
+        {servicesData.map((categoryBlock, index) => {
+          const isReversed = reverseStyle ? index % 2 === 0 : index % 2 !== 0;
+          return (
+            <motion.div 
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={staggerContainer}
+              key={index} 
+              className={`flex flex-col md:flex-row bg-navy-light rounded-md overflow-hidden border border-white/5 shadow-2xl ${isReversed ? 'md:flex-row-reverse' : ''}`}
+            >
+              {/* Image Half */}
+              <div 
+                className="w-full md:w-1/2 h-64 md:h-auto bg-cover bg-center"
+                style={{ backgroundImage: `url('${categoryBlock.image}')` }}
+              ></div>
+              
+              {/* Content Half */}
+              <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                <motion.h3 variants={fadeUp} className="font-serif text-2xl md:text-3xl text-gold mb-6 tracking-wide">
+                  {categoryBlock.category}
+                </motion.h3>
+                <motion.ul variants={staggerContainer} className="flex flex-col gap-3">
+                  {categoryBlock.items.map((service, sIdx) => (
+                    <motion.li 
+                      variants={fadeUp}
+                      key={sIdx}
+                      onClick={() => openBooking(service)}
+                      className="group flex items-center justify-between py-3 border-b border-white/5 cursor-pointer hover:border-gold/30 transition-colors"
+                    >
+                      <span className="text-gray-300 font-light group-hover:text-white transition-colors">{service}</span>
+                      <span className="text-gold opacity-0 group-hover:opacity-100 transition-opacity text-sm tracking-widest uppercase">Select</span>
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
+    </div>
+  );
+
   return (
     <div className="flex flex-col w-full min-h-[60vh] py-section px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
       <motion.div 
@@ -27,36 +88,12 @@ export default function Services() {
         <h1 className="font-serif text-5xl md:text-6xl text-gold mb-8">Our Services</h1>
         <div className="w-24 h-1 bg-gold mx-auto mb-12"></div>
         <p className="font-sans text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light">
-          A comprehensive suite of premium male grooming services designed to elevate your identity and provide ultimate relaxation.
+          A comprehensive suite of premium grooming and salon services designed to elevate your identity and provide ultimate relaxation.
         </p>
       </motion.div>
       
-      <motion.div 
-        initial="hidden"
-        animate="show"
-        variants={staggerContainer}
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto w-full"
-      >
-        {[
-          { name: "Classic Haircut", price: "$40", desc: "Tailored haircut with scissors or clippers, finishing with a sharp neck shave." },
-          { name: "Skin Fade / Zero Fade", price: "$45", desc: "Precision skin fade blending seamlessly into your preferred top style." },
-          { name: "The Executive Cut", price: "$75", desc: "Premium haircut combined with a full beard sculpt and relaxing hot towel." },
-          { name: "Hot Towel Straight Razor Shave", price: "$40", desc: "Traditional wet shave with pre-shave oil, hot towels, and rich lather." },
-          { name: "Beard Sculpting & Line-up", price: "$30", desc: "Detailed beard shaping, crisp line-up, and nourishing beard oil treatment." },
-          { name: "Scalp Treatment & Massage", price: "$35", desc: "Deep cleansing scalp exfoliation followed by a relaxing 15-minute massage." },
-          { name: "Kids Haircut", price: "$30", desc: "Premium grooming experience for the young gentlemen (under 12)." },
-          { name: "Hair & Beard Coloring", price: "$65+", desc: "Professional grey blending or full color application for hair and beard." }
-        ].map((service, idx) => (
-          <motion.div variants={fadeUp} key={idx} className="bg-navy-light p-8 rounded-md border border-white/5 flex flex-col gap-4 premium-hover group relative overflow-hidden cursor-default">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-green/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
-            <div className="flex justify-between items-center border-b border-white/10 pb-4 relative z-10">
-              <h3 className="font-serif text-2xl md:text-3xl text-white">{service.name}</h3>
-              <span className="font-sans text-xl md:text-2xl text-gold font-medium">{service.price}</span>
-            </div>
-            <p className="font-sans text-gray-400 font-light relative z-10 text-sm md:text-base">{service.desc}</p>
-          </motion.div>
-        ))}
-      </motion.div>
+      <ServiceSection title="Services For Men" servicesData={menServices} />
+      <ServiceSection title="Services For Women" servicesData={womenServices} reverseStyle={true} />
     </div>
   );
 }

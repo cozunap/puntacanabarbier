@@ -1,21 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { X, Check } from 'lucide-react';
+import { allServicesFlat } from '../data/services';
 
-export default function BookingModal({ isOpen, onClose }) {
-  if (!isOpen) return null;
-
-  const servicesList = [
-    "Classic Haircut",
-    "Skin Fade / Zero Fade",
-    "The Executive Cut",
-    "Hot Towel Straight Razor Shave",
-    "Beard Sculpting & Line-up",
-    "Scalp Treatment & Massage",
-    "Kids Haircut",
-    "Hair & Beard Coloring"
-  ];
-
+export default function BookingModal({ isOpen, onClose, initialService }) {
   const [selectedServices, setSelectedServices] = useState([]);
+
+  useEffect(() => {
+    if (isOpen) {
+      if (initialService) {
+        setSelectedServices([initialService]);
+      } else {
+        setSelectedServices([]);
+      }
+    }
+  }, [isOpen, initialService]);
+
+  if (!isOpen) return null;
 
   const toggleService = (service) => {
     if (selectedServices.includes(service)) {
@@ -58,8 +58,8 @@ export default function BookingModal({ isOpen, onClose }) {
             {/* Services Selection */}
             <div className="flex flex-col gap-4">
               <label className="text-gold font-sans text-xs uppercase tracking-widest">Select Services</label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {servicesList.map((service, idx) => {
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-60 overflow-y-auto pr-2 border border-white/10 p-2 rounded-sm bg-black/20">
+                {allServicesFlat.map((service, idx) => {
                   const isSelected = selectedServices.includes(service);
                   return (
                     <div 
