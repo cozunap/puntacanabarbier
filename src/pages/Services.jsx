@@ -120,8 +120,8 @@ export default function Services() {
     <div className="flex flex-col w-full min-h-[60vh] py-section px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
 
       
-      <GridServiceSection title="Services For Men" servicesData={menGridServices} />
-      <ServiceSection title="Services For Women" servicesData={womenServices} reverseStyle={true} />
+      <GridServiceSection title={t('services.men_title')} servicesData={menGridServices} />
+      <ServiceSection title={t('services.women_title')} servicesData={womenServices} reverseStyle={true} />
     </div>
   );
 }

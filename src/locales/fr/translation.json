@@ -18,6 +18,8 @@
   "services": {
     "title": "Nos Services",
     "subtitle": "Une gamme complète de services de soins et de salon haut de gamme conçus pour élever votre identité.",
+    "men_title": "Services Pour Hommes",
+    "women_title": "Services Pour Femmes",
     "men_grid": {
       "classic": { "title": "Coupe Classique", "desc": "Coupe sur mesure aux ciseaux ou à la tondeuse, finition avec un rasage net du cou." },
       "skin_fade": { "title": "Dégradé à Blanc / Zero Fade", "desc": "Dégradé de précision à blanc se fondant parfaitement avec votre style du dessus." },

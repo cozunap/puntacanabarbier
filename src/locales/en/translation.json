@@ -18,6 +18,8 @@
   "services": {
     "title": "Our Services",
     "subtitle": "A comprehensive suite of premium grooming and salon services designed to elevate your identity and provide ultimate relaxation.",
+    "men_title": "Services For Men",
+    "women_title": "Services For Women",
     "men_grid": {
       "classic": { "title": "Classic Haircut", "desc": "Tailored haircut with scissors or clippers, finishing with a sharp neck shave." },
       "skin_fade": { "title": "Skin Fade / Zero Fade", "desc": "Precision skin fade blending seamlessly into your preferred top style." },

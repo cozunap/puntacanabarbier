@@ -18,6 +18,8 @@
   "services": {
     "title": "Nuestros Servicios",
     "subtitle": "Un conjunto completo de servicios de aseo y peluquería premium diseñados para elevar tu identidad.",
+    "men_title": "Servicios Para Hombres",
+    "women_title": "Servicios Para Mujeres",
     "men_grid": {
       "classic": { "title": "Corte Clásico", "desc": "Corte de cabello a medida con tijeras o máquina, terminando con un afeitado de cuello preciso." },
       "skin_fade": { "title": "Degradado a la Piel / Zero Fade", "desc": "Degradado de precisión a la piel que se mezcla perfectamente con tu estilo superior." },
