@@ -1,7 +1,7 @@
 export const menServices = [
   {
     categoryKey: "services.men.category",
-    image: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=800&auto=format&fit=crop",
+    image: "/cut_executive.webp",
     itemKeys: [
       "services.men.tressage",
       "services.men.defrisage",
@@ -15,7 +15,7 @@ export const menServices = [
 export const womenServices = [
   {
     categoryKey: "services.women.brushing_cut.category",
-    image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=800&auto=format&fit=crop",
+    image: "/cut_waves.webp",
     itemKeys: [
       "services.women.brushing_cut.cut_adjustment",
       "services.women.brushing_cut.brushing_short",
@@ -30,7 +30,7 @@ export const womenServices = [
   },
   {
     categoryKey: "services.women.relaxer.category",
-    image: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=800&auto=format&fit=crop",
+    image: "/cut_blowout.webp",
     itemKeys: [
       "services.women.relaxer.protective",
       "services.women.relaxer.affirm",
@@ -41,7 +41,7 @@ export const womenServices = [
   },
   {
     categoryKey: "services.women.color.category",
-    image: "https://images.unsplash.com/photo-1600948836101-f9ff09c1f076?q=80&w=800&auto=format&fit=crop",
+    image: "/cut_undercut.webp",
     itemKeys: [
       "services.women.color.full_head",
       "services.women.color.top_highlights",
@@ -55,7 +55,7 @@ export const womenServices = [
   },
   {
     categoryKey: "services.women.treatments.category",
-    image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800&auto=format&fit=crop",
+    image: "/cut_urban_texture.webp",
     itemKeys: [
       "services.women.treatments.olaplex",
       "services.women.treatments.keratin_long",
@@ -67,7 +67,7 @@ export const womenServices = [
   },
   {
     categoryKey: "services.women.other.category",
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop",
+    image: "/cut_twists.webp",
     itemKeys: [
       "services.women.other.weave_removal",
       "services.women.other.glued_row",
