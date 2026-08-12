@@ -12,7 +12,7 @@ export const menGridServices = [
 export const womenServices = [
   {
     categoryKey: "services.women.brushing_cut.category",
-    image: "/cut_waves.webp",
+    image: "/womens_brushing.webp",
     itemKeys: [
       "services.women.brushing_cut.cut_adjustment",
       "services.women.brushing_cut.brushing_short",
@@ -27,7 +27,7 @@ export const womenServices = [
   },
   {
     categoryKey: "services.women.relaxer.category",
-    image: "/cut_blowout.webp",
+    image: "/womens_relaxer.webp",
     itemKeys: [
       "services.women.relaxer.protective",
       "services.women.relaxer.affirm",
@@ -38,7 +38,7 @@ export const womenServices = [
   },
   {
     categoryKey: "services.women.color.category",
-    image: "/cut_undercut.webp",
+    image: "/womens_color.webp",
     itemKeys: [
       "services.women.color.full_head",
       "services.women.color.top_highlights",
@@ -52,7 +52,7 @@ export const womenServices = [
   },
   {
     categoryKey: "services.women.treatments.category",
-    image: "/cut_urban_texture.webp",
+    image: "/womens_treatments.webp",
     itemKeys: [
       "services.women.treatments.olaplex",
       "services.women.treatments.keratin_long",
@@ -64,7 +64,7 @@ export const womenServices = [
   },
   {
     categoryKey: "services.women.other.category",
-    image: "/cut_twists.webp",
+    image: "/womens_other.webp",
     itemKeys: [
       "services.women.other.weave_removal",
       "services.women.other.glued_row",
