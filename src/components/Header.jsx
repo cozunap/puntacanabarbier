@@ -1,12 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export default function Header({ onOpenBooking }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const { t } = useTranslation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { name: t('nav.home'), path: '/' },
@@ -16,7 +25,7 @@ export default function Header({ onOpenBooking }) {
   ];
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-navy/80 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-navy/90 backdrop-blur-lg border-b border-white/10 shadow-lg' : 'bg-navy/0 border-b border-transparent'}`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-24 flex justify-between items-center">
         
         {/* Logo */}

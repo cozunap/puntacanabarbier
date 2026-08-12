@@ -33,7 +33,7 @@ const FloatingActions = () => {
             exit={{ opacity: 0, scale: 0.5 }}
             transition={{ duration: 0.3 }}
             onClick={scrollToTop}
-            className="w-12 h-12 bg-pc-gold text-pc-navy rounded-full flex items-center justify-center shadow-xl hover:bg-yellow-500 transition-colors"
+            className="w-12 h-12 bg-gold text-navy rounded-full flex items-center justify-center shadow-[0_10px_25px_-5px_rgba(184,154,90,0.4)] hover:bg-gold-light transition-colors"
             aria-label="Scroll to top"
           >
             <FaArrowUp size={20} />
