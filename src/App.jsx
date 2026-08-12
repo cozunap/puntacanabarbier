@@ -6,6 +6,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
+import ComingSoon from './pages/ComingSoon';
 import { BookingProvider } from './BookingContext';
 import FloatingActions from './components/FloatingActions';
 
@@ -52,22 +53,7 @@ function App() {
     };
   }, []);
 
-  return (
-    <Router>
-      <BookingProvider>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <FloatingActions />
-        </Layout>
-      </BookingProvider>
-    </Router>
-  );
+  return <ComingSoon />;
 }
 
 export default App;
