@@ -18,6 +18,16 @@
   "services": {
     "title": "Our Services",
     "subtitle": "A comprehensive suite of premium grooming and salon services designed to elevate your identity and provide ultimate relaxation.",
+    "men_grid": {
+      "classic": { "title": "Classic Haircut", "desc": "Tailored haircut with scissors or clippers, finishing with a sharp neck shave." },
+      "skin_fade": { "title": "Skin Fade / Zero Fade", "desc": "Precision skin fade blending seamlessly into your preferred top style." },
+      "executive": { "title": "The Executive Cut", "desc": "Premium haircut combined with a full beard sculpt and relaxing hot towel." },
+      "hot_towel": { "title": "Hot Towel Straight Razor Shave", "desc": "Traditional wet shave with pre-shave oil, hot towels, and rich lather." },
+      "beard_sculpting": { "title": "Beard Sculpting & Line-up", "desc": "Detailed beard shaping, crisp line-up, and nourishing beard oil treatment." },
+      "scalp_treatment": { "title": "Scalp Treatment & Massage", "desc": "Deep cleansing scalp exfoliation followed by a relaxing 15-minute massage." },
+      "kids_haircut": { "title": "Kids Haircut", "desc": "Premium grooming experience for the young gentlemen (under 12)." },
+      "hair_beard_coloring": { "title": "Hair & Beard Coloring", "desc": "Professional grey blending or full color application for hair and beard." }
+    },
     "men": {
       "category": "SERVICES FOR MEN",
       "tressage": "Braiding",

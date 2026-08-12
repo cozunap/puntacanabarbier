@@ -18,6 +18,16 @@
   "services": {
     "title": "Nuestros Servicios",
     "subtitle": "Un conjunto completo de servicios de aseo y peluquería premium diseñados para elevar tu identidad.",
+    "men_grid": {
+      "classic": { "title": "Corte Clásico", "desc": "Corte de cabello a medida con tijeras o máquina, terminando con un afeitado de cuello preciso." },
+      "skin_fade": { "title": "Degradado a la Piel / Zero Fade", "desc": "Degradado de precisión a la piel que se mezcla perfectamente con tu estilo superior." },
+      "executive": { "title": "Corte Ejecutivo", "desc": "Corte de cabello premium combinado con esculpido completo de barba y relajante toalla caliente." },
+      "hot_towel": { "title": "Afeitado con Navaja y Toalla Caliente", "desc": "Experiencia tradicional de afeitado con aceite pre-afeitado, toallas calientes y rica espuma." },
+      "beard_sculpting": { "title": "Esculpido y Delineado de Barba", "desc": "Moldeado detallado de barba, delineado preciso y tratamiento nutritivo con aceite para barba." },
+      "scalp_treatment": { "title": "Tratamiento de Cuero Cabelludo y Masaje", "desc": "Exfoliación profunda del cuero cabelludo seguida de un relajante masaje de 15 minutos." },
+      "kids_haircut": { "title": "Corte para Niños", "desc": "Experiencia de peluquería premium para los pequeños caballeros (menores de 12 años)." },
+      "hair_beard_coloring": { "title": "Coloración de Cabello y Barba", "desc": "Mezcla profesional de canas o aplicación de color completo para cabello y barba." }
+    },
     "men": {
       "category": "SERVICIOS PARA HOMBRES",
       "tressage": "Trenzado",

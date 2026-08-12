@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { menServices, womenServices } from '../data/services';
+import { menGridServices, womenServices } from '../data/services';
 import { useBooking } from '../BookingContext';
 
 export default function Services() {
@@ -21,6 +21,43 @@ export default function Services() {
     hidden: { opacity: 0, y: 30 },
     show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
   };
+
+  const GridServiceSection = ({ title, servicesData }) => (
+    <div className="mb-24">
+      <motion.div 
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={fadeUp}
+        className="text-center mb-16"
+      >
+        <h2 className="font-serif text-4xl md:text-5xl text-gold mb-6">{title}</h2>
+        <div className="w-16 h-1 bg-gold/50 mx-auto"></div>
+      </motion.div>
+      <motion.div 
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainer}
+        className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto w-full"
+      >
+        {servicesData.map((item, idx) => (
+          <motion.div 
+            variants={fadeUp}
+            key={idx}
+            onClick={() => openBooking(item.key + '.title')}
+            className="bg-navy-light p-8 rounded-md border border-white/5 shadow-2xl hover:border-gold/30 cursor-pointer transition-colors"
+          >
+            <div className="flex justify-between items-start mb-4">
+              <h3 className="font-serif text-2xl text-white group-hover:text-gold transition-colors">{t(item.key + '.title')}</h3>
+              <span className="font-sans text-gold text-lg">{item.price}</span>
+            </div>
+            <p className="font-sans text-gray-400 font-light leading-relaxed">{t(item.key + '.desc')}</p>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  );
 
   const ServiceSection = ({ title, servicesData, reverseStyle = false }) => (
     <div className="mb-24">
@@ -94,7 +131,7 @@ export default function Services() {
         </p>
       </motion.div>
       
-      <ServiceSection title="Services For Men" servicesData={menServices} />
+      <GridServiceSection title="Services For Men" servicesData={menGridServices} />
       <ServiceSection title="Services For Women" servicesData={womenServices} reverseStyle={true} />
     </div>
   );

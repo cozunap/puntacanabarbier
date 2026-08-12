@@ -1,15 +1,12 @@
-export const menServices = [
-  {
-    categoryKey: "services.men.category",
-    image: "/cut_executive.webp",
-    itemKeys: [
-      "services.men.tressage",
-      "services.men.defrisage",
-      "services.men.coupe",
-      "services.men.coloration",
-      "services.men.barbe"
-    ]
-  }
+export const menGridServices = [
+  { key: "services.men_grid.classic", price: "$40" },
+  { key: "services.men_grid.skin_fade", price: "$45" },
+  { key: "services.men_grid.executive", price: "$75" },
+  { key: "services.men_grid.hot_towel", price: "$40" },
+  { key: "services.men_grid.beard_sculpting", price: "$30" },
+  { key: "services.men_grid.scalp_treatment", price: "$35" },
+  { key: "services.men_grid.kids_haircut", price: "$30" },
+  { key: "services.men_grid.hair_beard_coloring", price: "$65+" }
 ];
 
 export const womenServices = [
@@ -87,6 +84,6 @@ export const womenServices = [
 ];
 
 export const allServicesFlat = [
-  ...menServices.flatMap(c => c.itemKeys),
+  ...menGridServices.map(c => c.key + '.title'),
   ...womenServices.flatMap(c => c.itemKeys)
 ];

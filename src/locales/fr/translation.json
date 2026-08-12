@@ -18,6 +18,16 @@
   "services": {
     "title": "Nos Services",
     "subtitle": "Une gamme complète de services de soins et de salon haut de gamme conçus pour élever votre identité.",
+    "men_grid": {
+      "classic": { "title": "Coupe Classique", "desc": "Coupe sur mesure aux ciseaux ou à la tondeuse, finition avec un rasage net du cou." },
+      "skin_fade": { "title": "Dégradé à Blanc / Zero Fade", "desc": "Dégradé de précision à blanc se fondant parfaitement avec votre style du dessus." },
+      "executive": { "title": "La Coupe Exécutive", "desc": "Coupe de cheveux premium combinée à un sculptage complet de la barbe et une serviette chaude relaxante." },
+      "hot_towel": { "title": "Rasage Traditionnel à la Serviette Chaude", "desc": "Expérience de rasage traditionnel avec huile pré-rasage, serviettes chaudes et mousse onctueuse." },
+      "beard_sculpting": { "title": "Sculptage et Contours de Barbe", "desc": "Façonnage détaillé de la barbe, contours nets et soin nourrissant à l'huile à barbe." },
+      "scalp_treatment": { "title": "Soin du Cuir Chevelu et Massage", "desc": "Exfoliation profonde du cuir chevelu suivie d'un massage relaxant de 15 minutes." },
+      "kids_haircut": { "title": "Coupe Enfant", "desc": "Expérience de soins premium pour les jeunes gentlemen (moins de 12 ans)." },
+      "hair_beard_coloring": { "title": "Coloration Cheveux et Barbe", "desc": "Estompage professionnel des cheveux gris ou application d'une couleur complète pour cheveux et barbe." }
+    },
     "men": {
       "category": "SERVICE POUR HOMMES",
       "tressage": "Tressage",
