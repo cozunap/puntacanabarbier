@@ -118,18 +118,7 @@ export default function Services() {
 
   return (
     <div className="flex flex-col w-full min-h-[60vh] py-section px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
-      <motion.div 
-        initial="hidden"
-        animate="show"
-        variants={fadeUp}
-        className="text-center mb-16 mt-12 md:mt-20"
-      >
-        <h1 className="font-serif text-5xl md:text-6xl text-gold mb-8">Our Services</h1>
-        <div className="w-24 h-1 bg-gold mx-auto mb-12"></div>
-        <p className="font-sans text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light">
-          A comprehensive suite of premium grooming and salon services designed to elevate your identity and provide ultimate relaxation.
-        </p>
-      </motion.div>
+
       
       <GridServiceSection title="Services For Men" servicesData={menGridServices} />
       <ServiceSection title="Services For Women" servicesData={womenServices} reverseStyle={true} />
