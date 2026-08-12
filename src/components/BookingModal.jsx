@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { X, Check } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { allServicesFlat } from '../data/services';
@@ -6,11 +6,17 @@ import { allServicesFlat } from '../data/services';
 export default function BookingModal({ isOpen, onClose, initialService }) {
   const [selectedServices, setSelectedServices] = useState([]);
   const { t } = useTranslation();
+  const selectedRef = useRef(null);
 
   useEffect(() => {
     if (isOpen) {
       if (initialService) {
         setSelectedServices([initialService]);
+        setTimeout(() => {
+          if (selectedRef.current) {
+            selectedRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 100);
       } else {
         setSelectedServices([]);
       }
@@ -63,9 +69,11 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-60 overflow-y-auto pr-2 border border-white/10 p-2 rounded-sm bg-black/20">
                 {allServicesFlat.map((service, idx) => {
                   const isSelected = selectedServices.includes(service);
+                  const isInitial = service === initialService;
                   return (
                     <div 
                       key={idx} 
+                      ref={isInitial ? selectedRef : null}
                       onClick={() => toggleService(service)}
                       className={`flex items-center gap-3 p-3 rounded-sm border cursor-pointer transition-all ${
                         isSelected ? 'border-gold bg-gold/10' : 'border-white/10 bg-navy hover:border-gold/50'
