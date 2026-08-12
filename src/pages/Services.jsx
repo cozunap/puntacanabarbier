@@ -59,7 +59,7 @@ export default function Services() {
     </div>
   );
 
-  const ServiceSection = ({ title, servicesData, reverseStyle = false }) => (
+  const MenuServiceSection = ({ title, servicesData }) => (
     <div className="mb-24">
       <motion.div 
         initial="hidden"
@@ -72,46 +72,34 @@ export default function Services() {
         <div className="w-16 h-1 bg-gold/50 mx-auto"></div>
       </motion.div>
 
-      <div className="flex flex-col gap-12 max-w-5xl mx-auto w-full">
-        {servicesData.map((categoryBlock, index) => {
-          const isReversed = reverseStyle ? index % 2 === 0 : index % 2 !== 0;
-          return (
-            <motion.div 
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={staggerContainer}
-              key={index} 
-              className={`flex flex-col md:flex-row bg-navy-light rounded-md overflow-hidden border border-white/5 shadow-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(184,154,90,0.15)] hover:border-gold/20 ${isReversed ? 'md:flex-row-reverse' : ''}`}
-            >
-              {/* Image Half */}
-              <div 
-                className="w-full md:w-1/2 h-64 md:h-auto bg-cover bg-center"
-                style={{ backgroundImage: `url('${categoryBlock.image}')` }}
-              ></div>
-              
-              {/* Content Half */}
-              <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-                <motion.h3 variants={fadeUp} className="font-serif text-2xl md:text-3xl text-gold mb-6 tracking-wide">
-                  {t(categoryBlock.categoryKey)}
-                </motion.h3>
-                <motion.ul variants={staggerContainer} className="flex flex-col gap-3">
-                  {categoryBlock.itemKeys.map((service, sIdx) => (
-                    <motion.li 
-                      variants={fadeUp}
-                      key={sIdx}
-                      onClick={() => openBooking(service)}
-                      className="group flex items-center justify-between py-3 border-b border-white/5 cursor-pointer hover:border-gold/30 transition-colors"
-                    >
-                      <span className="text-gray-300 font-light group-hover:text-white transition-colors">{t(service)}</span>
-                      <span className="text-gold opacity-0 group-hover:opacity-100 transition-opacity text-sm tracking-widest uppercase">{t('nav.book')}</span>
-                    </motion.li>
-                  ))}
-                </motion.ul>
-              </div>
-            </motion.div>
-          );
-        })}
+      <div className="columns-1 md:columns-2 gap-8 md:gap-12 max-w-5xl mx-auto w-full">
+        {servicesData.map((categoryBlock, index) => (
+          <motion.div 
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+            key={index} 
+            className="break-inside-avoid mb-8 md:mb-12 bg-navy-light p-8 rounded-md border border-white/5 shadow-xl hover:border-gold/20 transition-all duration-500"
+          >
+            <motion.h3 variants={fadeUp} className="font-serif text-2xl text-gold mb-6 tracking-wide border-b border-white/10 pb-4">
+              {t(categoryBlock.categoryKey)}
+            </motion.h3>
+            <motion.ul variants={staggerContainer} className="flex flex-col gap-2">
+              {categoryBlock.itemKeys.map((service, sIdx) => (
+                <motion.li 
+                  variants={fadeUp}
+                  key={sIdx}
+                  onClick={() => openBooking(service)}
+                  className="group flex flex-col md:flex-row md:items-center justify-between py-2 border-b border-white/5 cursor-pointer hover:border-gold/30 transition-colors"
+                >
+                  <span className="text-gray-300 font-light group-hover:text-white transition-colors">{t(service)}</span>
+                  <span className="text-gold opacity-0 group-hover:opacity-100 transition-opacity text-xs tracking-widest uppercase mt-1 md:mt-0">{t('nav.book')}</span>
+                </motion.li>
+              ))}
+            </motion.ul>
+          </motion.div>
+        ))}
       </div>
     </div>
   );
@@ -121,7 +109,7 @@ export default function Services() {
 
       
       <GridServiceSection title={t('services.men_title')} servicesData={menGridServices} />
-      <ServiceSection title={t('services.women_title')} servicesData={womenServices} reverseStyle={true} />
+      <MenuServiceSection title={t('services.women_title')} servicesData={womenServices} />
     </div>
   );
 }
