@@ -20,7 +20,7 @@ export default function About() {
         initial="hidden"
         animate="show"
         variants={staggerContainer}
-        className="mx-auto mt-12 md:mt-20 w-full"
+        className="mx-auto w-full"
       >
         <motion.div variants={fadeUp} className="text-center mb-16">
           <h1 className="font-serif text-4xl md:text-6xl text-gold mb-6 leading-tight">Welcome to Punta Cana Barbier</h1>
