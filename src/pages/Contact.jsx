@@ -87,14 +87,12 @@ export default function Contact() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
-        className="w-full h-[400px] md:h-[500px] mt-8 relative border-t border-gold/20"
+        className="w-full h-[400px] md:h-[500px] mt-8 relative border-t border-gold/20 flex items-center justify-center overflow-hidden bg-navy-light"
       >
-        {/* Overlay to give the map a Navy/Gold tint */}
-        <div className="absolute inset-0 bg-navy/30 mix-blend-overlay pointer-events-none z-10"></div>
+        {/* The Map (Disabled interactions so it stays perfectly aligned with our custom CSS marker) */}
         <iframe
-          src="https://www.google.com/maps?q=255+Boul.+de+la+Concorde+O.,+Laval,+QC+H7N+5T1&output=embed"
-          width="100%"
-          height="100%"
+          src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=255%20Boul.%20de%20la%20Concorde%20O.,%20Laval,%20QC%20H7N%205T1&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          className="absolute inset-0 w-full h-full pointer-events-none"
           style={{ 
             border: 0, 
             filter: 'grayscale(100%) invert(92%) contrast(1.2) sepia(10%) hue-rotate(180deg)' 
@@ -104,6 +102,35 @@ export default function Contact() {
           referrerPolicy="no-referrer-when-downgrade"
           title="Punta Cana Barbier Location"
         ></iframe>
+
+        {/* Overlay to give the map a Navy tint */}
+        <div className="absolute inset-0 bg-navy/30 mix-blend-overlay pointer-events-none z-10"></div>
+
+        {/* Custom Marker */}
+        <motion.a 
+          href="https://www.google.com/maps/dir//255+Boul.+de+la+Concorde+O.,+Laval,+QC+H7N+5T1"
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: [0, -10, 0], opacity: 1 }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+          className="relative z-20 flex flex-col items-center justify-center cursor-pointer group"
+        >
+          <div className="bg-navy p-3 rounded-full border-2 border-gold shadow-[0_0_30px_rgba(184,154,90,0.6)] group-hover:scale-110 transition-transform duration-300">
+            <img src="/Punta_Cana_Barbier_Logo.webp" alt="Punta Cana Barbier" className="w-16 h-16 object-contain" />
+          </div>
+          <div className="w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-t-[16px] border-t-gold mt-[-2px] group-hover:translate-y-1 transition-transform duration-300"></div>
+        </motion.a>
+
+        {/* Get Directions Button */}
+        <a 
+          href="https://www.google.com/maps/dir//255+Boul.+de+la+Concorde+O.,+Laval,+QC+H7N+5T1" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="absolute bottom-6 right-6 md:bottom-8 md:right-8 z-30 bg-gold text-navy font-bold uppercase tracking-widest py-3 px-6 rounded-sm text-sm hover:bg-gold-light premium-hover shadow-xl flex items-center gap-2 transition-colors"
+        >
+          Get Directions
+        </a>
       </motion.div>
     </div>
   );
