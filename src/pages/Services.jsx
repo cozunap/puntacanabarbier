@@ -18,8 +18,8 @@ export default function Services() {
   };
 
   const fadeUp = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.4, 0, 0.2, 1] } }
   };
 
   const GridServiceSection = ({ title, servicesData }) => (
@@ -46,7 +46,7 @@ export default function Services() {
             variants={fadeUp}
             key={idx}
             onClick={() => openBooking(item.key + '.title')}
-            className="bg-navy-light p-8 rounded-md border border-white/5 shadow-2xl hover:border-gold/30 cursor-pointer transition-colors"
+            className="bg-navy-light p-8 rounded-md border border-white/5 shadow-xl hover:border-gold/30 cursor-pointer transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(184,154,90,0.15)] group"
           >
             <div className="flex justify-between items-start mb-4">
               <h3 className="font-serif text-2xl text-white group-hover:text-gold transition-colors">{t(item.key + '.title')}</h3>
@@ -82,7 +82,7 @@ export default function Services() {
               viewport={{ once: true, margin: "-100px" }}
               variants={staggerContainer}
               key={index} 
-              className={`flex flex-col md:flex-row bg-navy-light rounded-md overflow-hidden border border-white/5 shadow-2xl ${isReversed ? 'md:flex-row-reverse' : ''}`}
+              className={`flex flex-col md:flex-row bg-navy-light rounded-md overflow-hidden border border-white/5 shadow-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(184,154,90,0.15)] hover:border-gold/20 ${isReversed ? 'md:flex-row-reverse' : ''}`}
             >
               {/* Image Half */}
               <div 
